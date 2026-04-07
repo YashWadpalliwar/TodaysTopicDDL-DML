@@ -1,0 +1,54 @@
+show databases;
+
+create database largedata1;
+
+use largedata1;
+
+create table Employeesdata(Empid int not null primary key, EmpName varchar(50), EmpSalary int);
+
+describe CompanyData;
+
+show columns from Employeesdata;
+
+show tables;
+
+alter table employeesdata rename CompanyData;
+
+select * from CompanyData;
+
+alter table CompanyData add column EmpDepartment varchar(500);
+
+alter table CompanyData change column Empsalary EmpExperience int;
+
+alter table CompanyData modify Empdepartment varchar(200);
+
+alter table CompanyData drop column empid;
+
+-- --------------------------------------------------------------------------
+
+create database My_FOREIGN_KEY;
+
+use My_FOREIGN_KEY;
+
+create table user1(Id int primary key, Name varchar(50), pincode int);
+
+select * from user1;
+
+insert into user1 (ID,Name,pincode) 
+values (101, "Name1", 440550),
+(102, "Name2", 45855),
+(103, "Name3", 45050),
+(104, "Name4", 450650),
+(105, "Name5", 448450);
+
+create table user2(clientID int primary key, foreign key(clientID) references 
+user1(id), clientName varchar(50), clientAdd varchar(50));
+
+insert into user2 (clientid, clientname, clientadd) values 
+(106, "Ankit", "zyx");
+
+select * from user2;
+
+
+
+
